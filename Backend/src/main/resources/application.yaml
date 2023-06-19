@@ -1,0 +1,24 @@
+ktor:
+  deployment:
+    host: "0.0.0.0"
+    port: "8080"
+  application:
+    modules:
+      - com.example.config.ApplicationModulesKt.koin
+      - com.example.config.ApplicationModulesKt.controllers
+      - com.example.config.ApplicationModulesKt.database
+      - com.example.config.ApplicationModulesKt.exceptions
+      - com.example.config.ApplicationModulesKt.serialization
+
+
+
+postgres:
+  url: "jdbc:postgresql://service-db/echobot1"
+  user: "echobot"
+  password: "echobot"
+  driverClassName: "org.postgresql.Driver"
+
+bot:
+  endpoints:
+    url: "http://bot:8081"
+    delay: "updateBotDelay"
